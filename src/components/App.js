@@ -3,7 +3,7 @@
 
 import React from 'react';
 import * as microsoftTeams from "@microsoft/teams-js";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 import Privacy from "./Privacy";
 import TermsOfUse from "./TermsOfUse";
@@ -23,19 +23,17 @@ function App() {
 
   // Initialize the Microsoft Teams SDK
   microsoftTeams.initialize();
-
+  
 
   // Display the app home page hosted in Teams
   return (
-    <Router>
+    <Router basename="/">
       <Switch>
         <Route exact path="/privacy" component={Privacy} />
         <Route exact path="/termsofuse" component={TermsOfUse} />
         <Route exact path="/auth-start" component={ConsentPopup} />
         <Route exact path="/auth-end" component={ClosePopup} />
-        <Route exact path="/oofteams" component={OoFTeams} />
-        {/* <Route exact path="/auth-start" component={ConsentPopup} />
-      <Route exact path="/auth-end" component={ClosePopup} /> */}
+        <Route exact path="/oofteams" component={OoFTeams} />        
       </Switch>
     </Router >
   );

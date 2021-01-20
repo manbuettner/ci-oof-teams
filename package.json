@@ -4,7 +4,7 @@
     "msteams": {
         "teamsAppId": "052b490b-eced-4ce8-ac05-ea9c943c7213"
     },
-    "homepage": "http://manbuettner.github.io/oof4teams",
+    "homepage": "http://manbuettner.github.io/ci-oof-teams",
     "private": true,
     "dependencies": {
         "@fluentui/react": "^7.155.3",
