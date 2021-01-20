@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CI-OoF 4 Teams Auth</title>
+  </head>
+  <body>
+    <div id="auth"></div>
+    <script
+      src="https://unpkg.com/@microsoft/teams-js/dist/MicrosoftTeams.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/@microsoft/mgt/dist/bundle/mgt-loader.js"></script>
+    <script>
+      mgt.TeamsProvider.handleAuth();
+    </script>
+  </body>
+</html>
