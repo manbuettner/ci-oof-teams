@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1003a6a5caa0cfc2b34fa7fdae3e3cad",
+    "revision": "717bc6bfe11df81a182dc83d91ec7852",
     "url": "/ci-oof-teams/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ci-oof-teams/static/css/2.b06b5bd6.chunk.css"
   },
   {
-    "revision": "fd32150ca45c7ffd7363",
+    "revision": "8b0e3f982676688f6551",
     "url": "/ci-oof-teams/static/css/main.12de4a83.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ci-oof-teams/static/js/2.031b4cfd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fd32150ca45c7ffd7363",
-    "url": "/ci-oof-teams/static/js/main.bf989e4b.chunk.js"
+    "revision": "8b0e3f982676688f6551",
+    "url": "/ci-oof-teams/static/js/main.291df6df.chunk.js"
   },
   {
     "revision": "d13daca3453db051565d",
