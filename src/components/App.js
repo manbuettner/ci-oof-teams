@@ -28,13 +28,11 @@ function App() {
   // Display the app home page hosted in Teams
   return (
     <Router basename="/">
-      <Switch>
         <Route exact path="/privacy" component={Privacy} />
         <Route exact path="/termsofuse" component={TermsOfUse} />
         <Route exact path="/auth-start" component={ConsentPopup} />
         <Route exact path="/auth-end" component={ClosePopup} />
         <Route exact path="/oofteams" component={OoFTeams} />        
-      </Switch>
     </Router >
   );
 
