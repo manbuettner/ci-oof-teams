@@ -1,0 +1,133 @@
+import React, { useState } from 'react';
+import classes from './AbsencePeriod.module.css';
+
+import Aux from '../../hoc/Auxillary/Auxillary';
+import { Checkbox, DatePicker, DayOfWeek, Label, Stack, Text } from '@fluentui/react';
+import moment from 'moment';
+import TimePicker from 'rc-time-picker';
+const AbsencePeriod = (props) => {
+    const [fromDate, setFromDate] = useState(moment().toDate());
+    const [toDate, setToDate] = useState(moment().toDate());
+
+
+
+    const DayPickerString = {
+        months: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ],
+        shortMonths: [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+        ],
+        days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Firday', 'Saturday'],
+        shortDays: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+        goToToday: 'Go to today',
+        prevMonthAriaLabel: 'Go to previous month',
+        nextMonthAriaLabel: 'Go to next month',
+        prevYearAriaLabel: 'Go to previous year',
+        nextYearAriaLabel: 'Go to next year',
+        closeButtonAriaLabel: 'Close date picker',
+        monthPickerHeaderAriaLabel: '{0}, select to change the year',
+        yearPickerHeaderAriaLabel: '{0}, select to change the month'
+    };
+
+    const fromSelectHandler = (fromDate) => {
+        setFromDate(fromDate);
+        props.fromDateHandler(fromDate);
+    }
+
+    const toSelectHandler = (toDate) => {
+        setToDate(toDate);
+        props.toDateHandler(toDate);
+    }
+
+    return (
+        <Aux>
+            <Stack >
+                <Stack tokens={aligmentsStackLabelTokens}>
+                    <Label>Absence period</Label>
+                    <Text>Please enter the period of your absence</Text>
+                    <Checkbox label="Scheduled Out of Office" />
+                </Stack>
+                <Stack horizontal tokens={aligmentsStackFromTokens}>
+                    <Label>from: </Label>
+                    <DatePicker
+                        id="fromDatePicker"
+                        className={classes.Control}
+                        firstDayOfWeek={DayOfWeek.Monday}
+                        string={DayPickerString}
+                        showWeekNumbers={true}
+                        firstWeekOfYear={1}
+                        showMonthPickerAsOverlay={true}
+                        isRequired={true}
+                        value={fromDate}
+                        placeholder="Select a date..."
+                        ariaLabel="Select a date"
+                        onSelectDate={fromSelectHandler}
+                    />
+                    <TimePicker defaultValue={moment()} showSecond={false} minuteStep={15} />
+                </Stack>
+                <Stack horizontal tokens={aligmentsStackToTokens} style={{paddingLeft: '40px'}}>
+                    <Label>to: </Label>
+                    <DatePicker
+                        id="toDatePicker"
+                        className={classes.Control}
+                        firstDayOfWeek={DayOfWeek.Monday}
+                        string={DayPickerString}
+                        showWeekNumbers={true}
+                        firstWeekOfYear={1}
+                        showMonthPickerAsOverlay={true}
+                        isRequired={true}
+                        value={toDate}
+                        onSelectDate={toSelectHandler}
+                        placeholder="Select a date..."
+                        ariaLabel="Select a date"
+                    />
+                    {/* <TimePicker defaultValue={moment()} showSecond={false} minuteStep={15} /> */}
+
+                </Stack>
+            </Stack>
+
+
+        </Aux>
+    );
+}
+
+const aligmentsStackFromTokens = {
+    childrenGap: 40,
+    padding: 25
+}
+
+const aligmentsStackToTokens = {
+    childrenGap: 40
+}
+
+const aligmentsStackLabelTokens = {
+    childrenGap: 20,
+    padding: 25
+}
+
+
+export default AbsencePeriod;

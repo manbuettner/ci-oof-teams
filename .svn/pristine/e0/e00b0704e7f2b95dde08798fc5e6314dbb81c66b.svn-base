@@ -1,0 +1,75 @@
+import { DefaultButton, initializeIcons, Label, Panel, PanelType, PrimaryButton, Stack, TextField } from '@fluentui/react';
+import React, { Component } from 'react';
+
+import Aux from '../../hoc/Auxillary/Auxillary';
+import classes from './DelegateInformation.module.css';
+initializeIcons();
+class DelegateInformation extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isDeputyPanelOpen: false,
+            delegateName: ""
+        }
+
+    }
+
+    deputyPanelHandler = () => {
+        this.setState((prevState) => {
+            return { isDeputyPanelOpen: !prevState.isDeputyPanelOpen }
+        })
+    }
+
+    searchFieldOnChangeHandler = (event) => {
+        let delegateName = {...this.state.delegateName};
+
+        delegateName = event.target.value;       
+
+        this.setState({delegateName: delegateName});
+    }
+
+
+    render() {
+        let deputyPanel = (this.state.isDeputyPanelOpen) ?
+            <Panel
+                isOpen={this.state.isDeputyPanelOpen}
+                onDismiss={() => this.setState({ isDeputyPanelOpen: false })}
+                type={PanelType.medium}
+                closeButtonAriaLabel="Close"
+            >
+                <div>
+                    For a search enter at least 2 characters and click on start search
+                </div>
+                <Stack horizontal tokens={aligmentsStackTokenSearch}>
+                        <Label><strong>Search:</strong></Label>
+                        <TextField onChange={this.searchFieldOnChangeHandler}/>
+                        <PrimaryButton text="Start search..." onClick={() => this.props.searchHandler(this.state.delegateName)} />
+                </Stack>
+            </Panel> : null;
+        return (
+            <Aux>
+                <div>
+                    <Label >Deputy</Label>
+                </div>
+                <div>
+                    <Label>Please select the name of your deputy</Label>
+                </div>
+                <div>
+                    <div>
+                        <TextField readyOnly value="Test" />
+                        <DefaultButton text="Deputy" onClick={this.deputyPanelHandler} />
+                    </div>
+                </div>
+                {deputyPanel}
+            </Aux>
+        )
+    }
+
+}
+const aligmentsStackTokenSearch= {
+    childrenGap: 40,
+    padding: 25
+  }
+
+export default DelegateInformation;

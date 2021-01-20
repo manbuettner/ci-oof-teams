@@ -1,0 +1,13 @@
+import React from 'react';
+import classes from './UserInformation.module.css';
+
+const UserInformation = (props) => {
+
+    return (
+        <div>
+            <span>First name: {props.givenName}</span>
+        </div>
+    );
+}
+
+export default UserInformation;

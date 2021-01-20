@@ -1,0 +1,114 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+import React from 'react';
+import { ChoiceGroup } from 'office-ui-fabric-react/lib/ChoiceGroup';
+import axios from 'axios';
+import * as microsoftTeams from "@microsoft/teams-js";
+
+import AppointmentList from './appointmentlist/AppointmentList';
+import DatePane from './DatePane/DatePane';
+import Aux from '../hoc/Auxillary/Auxillary';
+import classes from './Tab.module.css';
+import { Checkbox, Stack } from '@fluentui/react';
+/**
+ * The 'PersonalTab' component renders the main tab content
+ * of your app.
+ */
+class Tab extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      context: {},
+      customerBookings: null,
+      scheduledOOF: false
+    }
+
+  }
+
+  //React lifecycle method that gets called once a component has finished mounting
+  //Learn more: https://reactjs.org/docs/react-component.html#componentdidmount
+  componentDidMount() {
+    // Get the user context from Teams and set it in the state
+
+    microsoftTeams.getContext((context, error) => {
+      this.setState({
+        context: context
+      });
+    });
+
+
+
+    if (this.state.customerBookings === null) {
+      const requestData = {
+        "webcode": "ciazure",
+        "sEmail": "r.lawo@dokmgm.de",
+        "language": "en"
+      }
+      axios.post("https://cloud.ci-solution.com/api/GetCustomerBookings", requestData)
+        .then(response => {
+          this.setState({ customerBookings: response.data })
+        })
+    }
+    // Next steps: Error handling using the error object
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextState.context !== this.state.context;
+  }
+
+  render() {
+
+    const registerdOptions = [
+      { key: 'A', text: 'In Office', checked: false },
+      { key: 'B', text: 'Out of Office' }
+    ];
+
+    if (this.state.customerBookings) {
+      registerdOptions[0].checked = this.state.customerBookings.hasCIOof;
+    }
+
+    const onChange = (event, checked) => {
+      this.setState({ scheduledOOF: !!checked });
+    }
+
+
+    return (
+      // <div>
+      //   <h3>Hello World!</h3>
+      //   <h1>Congratulations {userName}!</h1> <h3>This is the tab you made :-)</h3>
+      //   <ChoiceGroup options={registerdOptions} label="Registered State" />
+
+      // </div>
+      <Aux>
+        <Stack horizontal disableShrink tokens={aligmentsStackTokensTop}>
+          <Stack.Item align="start">
+            <DatePane />
+          </Stack.Item>
+          <Stack.Item align="start">
+            <ChoiceGroup options={registerdOptions} label="Registered State" />
+            <Checkbox className={classes.CheckboxOOF} label="Scheduled out of office" checked={this.state.scheduledOOF} onChange={onChange} />
+            <h1>Hallo {this.state.context["upn"]}</h1>
+          </Stack.Item>
+        </Stack>
+        <Stack>
+          <Stack.Item align="center" tokens={aligmentsStackTokens}>
+            <AppointmentList username={this.state.context["upn"]} />
+            Test 1234
+          </Stack.Item>
+        </Stack>
+      </Aux>
+    );
+  }
+}
+
+const aligmentsStackTokens = {
+  childrenGap: 5,
+  padding: 10,
+};
+
+const aligmentsStackTokensTop = {
+  childrenGap: 40,
+  padding: 25
+}
+export default Tab;

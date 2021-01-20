@@ -1,0 +1,25 @@
+.UserContainer {
+    position: relative;
+    border: solid 1px #ddd;
+    border-radius: 3px;
+    padding: 15px 10px 10px;
+}
+
+.GroupLabel {
+    position:absolute;
+    top: -17px;
+    padding: 5px;
+    background: #fff;
+}
+
+.Info {
+    margin-bottom: 5px;
+    padding: 3px 5px;
+    background: #fdffe5;
+}
+.UserInformation {
+    background: #f9f9f9;
+    padding: 5px
+}
+
+

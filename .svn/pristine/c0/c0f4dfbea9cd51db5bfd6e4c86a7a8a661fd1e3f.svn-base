@@ -1,0 +1,20 @@
+import React from 'react';
+import Aux from '../../../hoc/Auxillary/Auxillary';
+import DelegateInformation from '../DelegateInformation';
+
+
+
+const DelegatesInformationList = (props) => {
+
+    const columns = [{
+
+    }]
+
+    return(
+        <Aux>
+            
+        </Aux>
+    );
+}
+
+export default DelegateInformation;

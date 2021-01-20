@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/d2952bd7-1413-4c21-873a-658e8a2e6716/resourceGroups/appServices/providers/Microsoft.Web/sites/oof4teams",
+    "appService.deploySubpath": "build"
+}
