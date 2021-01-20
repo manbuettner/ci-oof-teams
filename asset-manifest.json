@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ci-oof-teams/static/css/main.12de4a83.chunk.css",
-    "main.js": "/ci-oof-teams/static/js/main.2e7630ce.chunk.js",
-    "main.js.map": "/ci-oof-teams/static/js/main.2e7630ce.chunk.js.map",
+    "main.js": "/ci-oof-teams/static/js/main.bf989e4b.chunk.js",
+    "main.js.map": "/ci-oof-teams/static/js/main.bf989e4b.chunk.js.map",
     "runtime-main.js": "/ci-oof-teams/static/js/runtime-main.e3f12c89.js",
     "runtime-main.js.map": "/ci-oof-teams/static/js/runtime-main.e3f12c89.js.map",
     "static/css/2.b06b5bd6.chunk.css": "/ci-oof-teams/static/css/2.b06b5bd6.chunk.css",
     "static/js/2.031b4cfd.chunk.js": "/ci-oof-teams/static/js/2.031b4cfd.chunk.js",
     "static/js/2.031b4cfd.chunk.js.map": "/ci-oof-teams/static/js/2.031b4cfd.chunk.js.map",
     "index.html": "/ci-oof-teams/index.html",
-    "precache-manifest.8d3edccf28b6eba23605f122ac81555b.js": "/ci-oof-teams/precache-manifest.8d3edccf28b6eba23605f122ac81555b.js",
+    "precache-manifest.6c69847e80462f0cc1ada19e79171c9e.js": "/ci-oof-teams/precache-manifest.6c69847e80462f0cc1ada19e79171c9e.js",
     "service-worker.js": "/ci-oof-teams/service-worker.js",
     "static/css/2.b06b5bd6.chunk.css.map": "/ci-oof-teams/static/css/2.b06b5bd6.chunk.css.map",
     "static/css/main.12de4a83.chunk.css.map": "/ci-oof-teams/static/css/main.12de4a83.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.b06b5bd6.chunk.css",
     "static/js/2.031b4cfd.chunk.js",
     "static/css/main.12de4a83.chunk.css",
-    "static/js/main.2e7630ce.chunk.js"
+    "static/js/main.bf989e4b.chunk.js"
   ]
 }
