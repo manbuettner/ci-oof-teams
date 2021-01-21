@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4117933b0a993c81d16fdb6dc225c050",
+    "revision": "f30b5cae45ff863aea49d61ba9f2a165",
     "url": "https://manbuettner.github.io/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://manbuettner.github.io/static/css/2.b06b5bd6.chunk.css"
   },
   {
-    "revision": "8e3db05bcf15f1d1a689",
+    "revision": "5dddec02d3f653c095c5",
     "url": "https://manbuettner.github.io/static/css/main.12de4a83.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://manbuettner.github.io/static/js/2.27836458.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8e3db05bcf15f1d1a689",
-    "url": "https://manbuettner.github.io/static/js/main.190cd095.chunk.js"
+    "revision": "5dddec02d3f653c095c5",
+    "url": "https://manbuettner.github.io/static/js/main.bf2c4d35.chunk.js"
   },
   {
     "revision": "baff82f6c0240996fe5a",
